@@ -1,4 +1,3 @@
-Here is the fully fixed `README.txt` content for your stock prediction project:
 
 
 # Stock Price Prediction using LSTM
