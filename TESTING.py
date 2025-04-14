@@ -12,7 +12,7 @@ import os
 
 # -------- CONFIGURATION --------
 MODEL_PATH = r"C:\Users\pc\Desktop\aiprojects\Stock_updated\stock_price_model.h5"  # Your model path
-ALPHA_VANTAGE_API_KEY = 'YOUR_ALPHA_VANTAGE_API_KEY'  # Replace with your API Key
+ALPHA_VANTAGE_API_KEY = 'YOUR_API_KEY'  # Replace with your API Key
 WINDOW_SIZE = 60  # Based on how the model was trained
 
 # -------- FETCH DATA --------
@@ -103,17 +103,9 @@ def run_stock_prediction(ticker):
     plot_predictions(df_raw.index[-len(y_true):], y_true, y_pred,
                      title=f"{ticker} - Actual vs Predicted Prices")
 
-    # Predict next 3 days (mid-term forecast)
-    last_window = X[-1]
-    next_days = predict_future(model, last_window, days=3, scaler=scaler)
-
-    future_dates = [df_raw.index[-1] + timedelta(days=i+1) for i in range(3)]
-    plot_predictions(future_dates, next_days, next_days,
-                     title=f"{ticker} - Forecast for Next 3 Days",
-                     export_path="forecast_3_days.pdf")
-
     # Predict next hour - only meaningful if using 1-minute or 5-minute data
     print("\n🕒 Short-term (next hour) prediction:")
+    last_window = X[-1]  # ✅ Fixed: Set last_window before using it
     next_hour = predict_future(model, last_window, days=1, scaler=scaler)
     print(f"📈 Predicted next hour price: ₹{next_hour[-1][0]:.2f}")
 
@@ -121,3 +113,4 @@ def run_stock_prediction(ticker):
 if __name__ == "__main__":
     ticker_input = input("Enter the stock ticker symbol (e.g., TATAMOTORS.NS or TSLA): ").strip().upper()
     run_stock_prediction(ticker_input)
+
