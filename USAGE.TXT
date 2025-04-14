@@ -1,0 +1,55 @@
+
+Usage
+1. Clone the Repository
+Start by cloning the repository to your local machine:
+
+bash
+Copy
+Edit
+git clone https://github.com/your-username/your-repository-name.git
+2. Install Dependencies
+Navigate to the project folder and install the necessary dependencies using the requirements.txt:
+
+bash
+Copy
+Edit
+cd your-repository-name
+pip install -r requirements.txt
+3. Setup API Key
+You will need an Alpha Vantage API key to fetch stock data. Sign up for a free API key here.
+
+Once you have the key, replace the placeholder in the TESTING.py script:
+
+python
+Copy
+Edit
+ALPHA_VANTAGE_API_KEY = 'YOUR_API_KEY'
+4. Run the Stock Prediction
+Run the script with your desired stock ticker symbol. The stock ticker should be in the format of TICKER.SYMBOL (e.g., AAPL for Apple, MSFT for Microsoft):
+
+bash
+Copy
+Edit
+python TESTING.py
+You will be prompted to enter the stock ticker symbol in the terminal:
+
+java
+Copy
+Edit
+Enter the stock ticker symbol (e.g., TATAMOTORS.NS or TSLA): MSFT
+5. View Results
+The model will:
+
+Output performance evaluation metrics (MAE, MSE, RMSE, R² Score).
+
+Display a plot comparing actual vs predicted stock prices.
+
+Predict the next hour’s stock price based on the last available data.
+
+Example Output:
+yaml
+Copy
+Edit
+📏 MAE: 3.5777, MSE: 18.7211, RMSE: 4.3268, R² Score: 0.9984
+📈 Predicted next hour price: ₹425.67
+The prediction results will be displayed graphically and saved as prediction_plot.pdf.
