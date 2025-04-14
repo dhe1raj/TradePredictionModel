@@ -4,7 +4,7 @@
 
 This repository contains a stock price prediction model built using LSTM (Long Short-Term Memory) and the Alpha Vantage API for fetching historical stock data. The model predicts the future stock prices based on the past data.
 
-##MSFT Achievement
+# **MSFT Achievement**
 Our cutting-edge LSTM model has achieved outstanding results in forecasting Microsoft (MSFT) stock prices, setting a new standard for accuracy in financial prediction. When we tested the model on Microsoft’s historical data, the performance was nothing short of remarkable:
 
 R² Score: 0.9984 – This near-perfect score reflects an exceptional fit between the predicted and actual stock prices, showing that our model can predict Microsoft’s price movements with unprecedented precision.
