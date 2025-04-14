@@ -11,7 +11,7 @@ from alpha_vantage.timeseries import TimeSeries
 import os
 
 # -------- CONFIGURATION --------
-MODEL_PATH = r"C:\Users\pc\Desktop\aiprojects\Stock_updated\stock_price_model.h5"  # Your model path
+MODEL_PATH = r"stock_price_model.h5"  # Your model path
 ALPHA_VANTAGE_API_KEY = 'YOUR_API_KEY'  # Replace with your API Key
 WINDOW_SIZE = 60  # Based on how the model was trained
 
